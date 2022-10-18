@@ -56,7 +56,12 @@ def main():
         gdf.plot()
         plt.tight_layout()
         plt.savefig(figallname, facecolor="w", bbox_inches="tight")
-        
+
+
+        # save dill files
+        fn_dill = f"output_largest_polygon_dill/{name}.dill"
+        with open(fn_dill, "wb") as f:
+            dill.dump(target_poly, f)
 
 
 
